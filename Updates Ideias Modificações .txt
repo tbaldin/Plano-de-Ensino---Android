@@ -1,4 +1,7 @@
 ***** Este  arquivo será usado para fazer alterações*****
 
+Nome do pacote:
+diego.taiane.planodeensino_uffs
+
 
 	1 - Plano de Fundo da UFFS
