@@ -59,7 +59,7 @@ public class CadastroPlano extends ListActivity {
         Plano plano = planos.get(posicao);
         // Cria a intent para abrir a tela de editar
         Intent it = new Intent(this, EditarPlano.class);
-        // / Passa o id da pessoa como parâmetro
+        // / Passa o id da plano como parâmetro
         it.putExtra(Planos._ID, plano.id);
         // Abre a tela de edição
         startActivityForResult(it, INSERIR_EDITAR);

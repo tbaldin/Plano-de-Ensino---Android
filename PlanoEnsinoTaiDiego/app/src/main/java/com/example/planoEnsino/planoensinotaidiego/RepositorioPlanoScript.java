@@ -20,7 +20,7 @@ public class RepositorioPlanosScript extends RepositorioPlano {
     // Controle de versão
     private static final int VERSAO_BANCO = 1;
     // Nome da tabela
-    public static final String TABELA_PESSOA = "plano";
+    public static final String TABELA_PLANO = "plano";
     // Classe utilitária para abrir, criar, e atualizar o banco de dados
     private SQLiteHelper dbHelper;
     // Cria o banco de dados com um script SQL
