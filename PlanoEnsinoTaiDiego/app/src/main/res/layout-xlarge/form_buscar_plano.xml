@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="fill_parent"
+    android:layout_width="fill_parent"
+    android:background="#ffffff">
+    <TableRow>
+        <TextView android:id="@+id/text1"
+            android:text="Materia:" android:textColor="#000000" />
+        <EditText android:id="@+id/campoMateria" android:width="240px" />
+    </TableRow>
+    <TableRow>
+        <ImageButton android:src="@drawable/pesquisar"
+            android:id="@+id/btBuscar" android:text="Buscar" />
+    </TableRow>
+    <TableRow> <TextView android:id="@+id/text2"
+        android:text="Professor:" android:textColor="#000000" />
+        <EditText android:id="@+id/campoProfessor" />
+    </TableRow>
+    <TableRow> <TextView android:id="@+id/text3"
+        android:text="Conteudo:"
+        android:textColor="#000000" />
+        <EditText android:id="@+id/campoConteudo" />
+    </TableRow>
+</TableLayout>
