@@ -21,7 +21,7 @@ public class EditarPlano extends Activity {
 
     @Override
     protected void onCreate(Bundle icicle) {
-        super.onCreate(icicle); setContentView(R.layout.form_editar_plano);
+        super.onCreate(icicle); setContentView(R.layout.form_editar_pessoa);
         campoMateria = (EditText) findViewById(R.id.campoNome);
         campoProfessor = (EditText) findViewById(R.id.campoCpf);
         campoConteudo = (EditText) findViewById(R.id.campoIdade);

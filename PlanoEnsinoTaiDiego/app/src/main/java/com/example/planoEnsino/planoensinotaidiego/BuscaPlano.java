@@ -17,7 +17,7 @@ public class BuscaPlano extends Activity implements View.OnClickListener {
     protected void onCreate(Bundle icicle) {
         super.onCreate(icicle);
 
-        setContentView(R.layout.form_buscar_plano);
+        setContentView(R.layout.form_buscar_pessoa);
 
         ImageButton btBuscar = (ImageButton) findViewById(R.id.btBuscar);
         btBuscar.setOnClickListener(this);
@@ -42,10 +42,10 @@ public class BuscaPlano extends Activity implements View.OnClickListener {
         EditText professor = (EditText) findViewById(R.id.campoProfessor);
         EditText conteudo = (EditText) findViewById(R.id.campoConteudo);
 
-// Recupera o nome da plano
+// Recupera o nome da pessoa
         String materiaPlano = materia.getText().toString();
 
-// Busca a plano pelo nome
+// Busca a pessoa pelo nome
         Plano plano = buscarPlano(materiaPlano);
 
         if (plano != null) {
