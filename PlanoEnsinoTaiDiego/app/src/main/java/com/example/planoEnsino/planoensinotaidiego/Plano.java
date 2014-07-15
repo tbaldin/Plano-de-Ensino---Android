@@ -3,7 +3,7 @@ package com.example.planoEnsino.planoensinotaidiego;
 import android.content.ContentUris;
 import android.net.Uri;
 import android.provider.BaseColumns;
-import com.example.planoEnsino.planoensinotaidiego.Plano.Planos
+import com.example.planoEnsino.planoensinotaidiego.Plano.Planos;
 
 /**
  * Created by Taiane on 14/07/2014.

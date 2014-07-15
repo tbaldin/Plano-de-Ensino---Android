@@ -3,7 +3,7 @@
     package="com.example.planoEnsino.planoensinotaidiego"
     android:versionCode="1"
     android:versionName="1.0" >
-    <uses-sdk android:minSdkVersion="5" />
+    <uses-sdk android:minSdkVersion="7" />
 
     <application
         android:icon="@drawable/icon"
