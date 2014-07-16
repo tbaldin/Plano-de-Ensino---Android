@@ -14,7 +14,7 @@
                 <category android:name="android.intent.category.LAUNCHER"></category>
             </intent-filter>
         </activity>
-        <activity android:name="EditarPlano"></activity>
-        <activity android:name="BuscaPlano"></activity>
+        <activity android:name="EditarPlano"/>
+        <activity android:name="BuscaPlano"/>
     </application>
 </manifest>

@@ -9,25 +9,24 @@ import com.example.planoEnsino.planoensinotaidiego.Plano.Planos;
  * Created by Taiane on 14/07/2014.
  */
 public class Plano {
-    public static String[] colunas = new String[] {
-            Planos._ID, Planos.MATERIA, Planos.PROFESSOR, Planos.CONTEUDO
-    };
+
+    public static String[] colunas = new String[] {Planos._ID, Plano.MATERIA, Plano.PROFESSOR, Plano.CONTEUDO };
     public static final String AUTHORITY = "com.example.planoEnsino.planoensinotaidiego.provider.plano";
     public long id;
     public String materia;
     public String professor;
-    public int conteudo;
+    public String conteudo;
 
     public Plano() {
     }
 
-    public Plano(String mat, String profe, int conteu) {
+    public Plano(String mat, String profe, String conteu) {
         super(); this.materia = mat;
         this.professor = profe;
         this.conteudo = conteu;
     }
 
-    public Plano(long id, String materi, String profe, int conteu) {
+    public Plano(long id, String materi, String profe, String conteu) {
         super();
         this.id = id;
         this.materia = materi;
@@ -38,7 +37,11 @@ public class Plano {
      * Provider * *
      * Filha de BaseColumns que já define (_id e _count), para seguir o padrão *
      * Android */
-    public static final class Planos implements BaseColumns {// Não pode instanciar esta Classe
+    public static final class Planos implements BaseColumns {
+        public static int PROFESSOR;// Não pode instanciar esta Classe
+        public static String MATERIA;
+        public static String CONTEUDO;
+
         private Planos() {
         }
     }
@@ -50,12 +53,13 @@ public class Plano {
     public static final String PROFESSOR = "professor";
     public static final String CONTEUDO = "CONTEUDO";
     public static Uri getUriId(long id) { // Adiciona o id na URI default do /planos
-        Uri uriPlanos = ContentUris.withAppendedId(Planos.CONTENT_URI, id);
+        Uri uriPlanos = ContentUris.withAppendedId(Plano.CONTENT_URI, id);
+                //ContentUris.withAppendedId(uriPlanos.CONTENT_URI , id);
         return uriPlanos;
     }
 
     @Override public String toString() {
-        return "Materia: " + materia + ", Professor: " + professor + ", Conteudo: " + conteudo;
+        return "Materia: " + MATERIA + ", Professor: " + PROFESSOR + ", Conteudo: " + CONTEUDO;
     }
 }
 

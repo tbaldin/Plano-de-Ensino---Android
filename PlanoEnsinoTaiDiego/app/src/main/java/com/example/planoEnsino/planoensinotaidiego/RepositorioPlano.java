@@ -44,7 +44,7 @@ public class RepositorioPlano {
     public long inserir(Plano plano) {
         ContentValues values = new ContentValues();
         values.put(Planos.MATERIA  , plano.materia);
-        values.put(Planos.PROFESSOR, plano.professor);
+        values.put(plano.professor, Planos.PROFESSOR);
         values.put(Planos.CONTEUDO, plano.conteudo);
         long id = inserir(values);
         return id;
@@ -60,7 +60,7 @@ public class RepositorioPlano {
     public int atualizar(Plano plano) {
         ContentValues values = new ContentValues();
         values.put(Planos.MATERIA, plano.materia);
-        values.put(Planos.PROFESSOR, plano.professor);
+        values.put(plano.professor, Planos.PROFESSOR);
         values.put(Planos.CONTEUDO, plano.conteudo);
         String _id = String.valueOf(plano.id);
         String where = Planos._ID + "=?";
@@ -105,7 +105,7 @@ public class RepositorioPlano {
             plano.id = c.getLong(0);
             plano.materia = c.getString(1);
             plano.professor = c.getString(2);
-            plano.conteudo = c.getInt(3);
+            plano.conteudo = c.getString(3000);
             return plano;
         }
         return null;
@@ -113,23 +113,23 @@ public class RepositorioPlano {
 
     // Retorna um cursor com todas as Planos
     public Cursor getCursor() {
-        try {
+        //try {
             return db.query(NOME_TABELA, Plano.colunas, null, null, null, null, null, null);
-        } catch (SQLException e) {
-            Log.e(CATEGORIA, "Erro ao buscar o Plano: " + e.toString());
-            return null;
+        //} catch (SQLException v) {
+           // Log.e(CATEGORIA, "Erro ao buscar o Plano: " + v.toString());
+           // return null;
         }
     }
 
     // Retorna uma lista com todas as Planos
-    public List<Plano> listarPlanos() {
+   /* public List<Planos> listarPlanos() {
         Cursor c = getCursor();
-        List<Plano> planos = new ArrayList<Plano>();
+        List<Planos> planos = new ArrayList<Plano>();
         if (c.moveToFirst()) {
             // Recupera os índices das colunas
             int idxId = c.getColumnIndex(Planos._ID);
             int idxMateria = c.getColumnIndex(Planos.MATERIA);
-            int idxProfessor = c.getColumnIndex(Planos.PROFESSOR);
+            int idxProfessor = c.getColumnIndex(String.valueOf(Planos.PROFESSOR));
             int idxConteudo = c.getColumnIndex(Planos.CONTEUDO);
             // Loop até o final
             do {
@@ -139,11 +139,12 @@ public class RepositorioPlano {
                 plano.id = c.getLong(idxId);
                 plano.materia = c.getString(idxMateria);
                 plano.professor = c.getString(idxProfessor);
-                plano.conteudo = c.getInt(idxConteudo);
+                plano.conteudo = c.getString(idxConteudo);
             } while (c.moveToNext());
         }
         return planos;
-    }
+    }*/
+
 
     // Busca a Plano pelo nome "select * from Plano where nome=?"
     public Plano buscarPlanoPorMateria(String materia) {
@@ -158,10 +159,10 @@ public class RepositorioPlano {
                 plano.id = c.getLong(0);
                 plano.materia = c.getString(1);
                 plano.professor = c.getString(2);
-                plano.conteudo = c.getInt(3);
+                plano.conteudo = c.getString(3000);
             }
-        } catch (SQLException e) {
-            Log.e(CATEGORIA, "Erro ao buscar a Plano pela materia: " + e.toString());
+        } catch (SQLException g) {
+            Log.e(CATEGORIA, "Erro ao buscar a Plano pela materia: " + g.toString());
             return null;
         }
         return plano;

@@ -10,5 +10,5 @@
         android:layout_width="100sp" />
     <TextView android:id="@+id/conteudo"
         android:layout_height="30dip"
-        android:layout_width="40sp" />
+        android:layout_width="match_parent" />
 </LinearLayout>

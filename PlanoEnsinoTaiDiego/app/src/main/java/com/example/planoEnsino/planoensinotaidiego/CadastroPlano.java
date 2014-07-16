@@ -22,7 +22,7 @@ public class CadastroPlano extends ListActivity {
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        repositorio = new RepositorioPlanosScript(this);
+        repositorio = new RepositorioPlanoScript(this);
         atualizarLista();
     }
     protected void atualizarLista() { // Pega a lista de planos e exibe na tela

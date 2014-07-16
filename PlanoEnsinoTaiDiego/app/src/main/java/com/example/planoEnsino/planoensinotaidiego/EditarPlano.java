@@ -4,8 +4,10 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.EditText;
 import android.widget.ImageButton;
+
 import com.example.planoEnsino.planoensinotaidiego.Plano.Planos;
 
 /**
@@ -17,19 +19,21 @@ public class EditarPlano extends Activity {
     private EditText campoMateria;
     private EditText campoProfessor;
     private EditText campoConteudo;
-    private Long id;
+    private long id;
 
     @Override
     protected void onCreate(Bundle icicle) {
-        super.onCreate(icicle); setContentView(R.layout.form_editar_pessoa);
-        campoMateria = (EditText) findViewById(R.id.campoNome);
-        campoProfessor = (EditText) findViewById(R.id.campoCpf);
-        campoConteudo = (EditText) findViewById(R.id.campoIdade);
-        id = null; Bundle extras = getIntent().getExtras();
+        super.onCreate(icicle);
+        setContentView(R.layout.form_editar_plano);
+        campoMateria = (EditText) findViewById(R.id.campoMateria);
+        campoProfessor = (EditText) findViewById(R.id.campoProfessor);
+        campoConteudo = (EditText) findViewById(R.id.campoConteudo);
+        id = null;
+        Bundle extras = getIntent().getExtras();
 
         // Se for para Editar, recuperar os valores ...
         if (extras != null) {
-            id = extras.getLong(Plano.Planos._ID);
+            id = extras.getLong(Planos._ID);
             if (id != null) {
                 Plano p = BuscaPlano(id);
                 campoMateria.setText(p.materia);
